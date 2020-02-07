@@ -1,0 +1,70 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color:#FFFDF7;
+  background: linear-gradient(180deg, #fffdf7 0%,#2ca58d 100%);
+  color:#0A2342;
+  font-weight:bold;
+}
+
+header {
+  color:#0A2342;
+  background-color:#F4C8D8;
+  width:50%;
+  margin:auto;
+  border-radius:50px;
+}
+header h1 {
+  padding-top:10px;
+  padding-bottom:0px;
+  margin-bottom:0px;
+}
+header p {
+  padding-bottom:10px;
+  margin-top:0px;
+}
+form * {
+  margin:auto;
+  text-align:center;
+}
+form label, form fieldset, input#submit {
+  margin-top:25px;
+  margin-bottom:5px;
+}
+fieldset {
+  width:80%;
+  border:1px solid #2CA58D;
+  border-radius:6px;
+}
+form input, form select, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+header {
+  text-align:center;
+}
+
+form {
+  margin:auto;
+  border:1px solid black;
+  max-width:700px;
+  background-color:#84BC9C;
+}
+form * {
+  display:block;
+}
+form fieldset * {
+  display:inline;
+  margin-left:20px;
+  margin-right:5px;
+}
+textarea {
+  width:70%;
+  height:5em;
+}
+input#submit {
+  font-size:1.5em;
+  background-color:#0A2342;
+  color:#FFFDF7;
+  border:1px solid #2CA58D;
+  margin-bottom:50px;
+  padding:10px;
+}

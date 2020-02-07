@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A short sample technical documentation
+    page for Python 3"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Python 3 Technical Documentation (Sample)</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet">
+</head>
+<body>
+
+  <nav id='navbar'>
+    <header><h1>Python 3 Documentation</h1></header>
+    <ul>
+      <li><a href='#Introduction' class='nav-link'>Introduction</a></li>
+      <li><a href='#Hello_World_(And_Variables)' class='nav-link'>Hello World (And Variables)</a></li>
+      <li><a href='#F-Strings' class='nav-link'>F-Strings</a></li>
+      <li><a href='#Code_Blocks' class='nav-link'>Code Blocks</a></li>
+      <li><a href='#Functions' class='nav-link'>Functions</a></li>
+      <li><a href='#Additional_Resources' class='nav-link'>Additional Resources</a></li>
+    </ul>
+  </nav>
+
+  <main id='main-doc'>
+    <article>
+    <section class='main-section' id='Introduction'>
+      <header><h2>Introduction</h2></header>
+      <p><strong>Note:</strong> This guide assumes that the reader has some
+        familiarity with programming and data types. For an introduction on
+        these topics,
+        <a href='https://dev.to/aspittel/a-complete-beginner-s-guide-to-programming-2ni4'>
+          A Complete Beginner's Guide to Programming</a> by Ali Spittel is an
+          excellent place to start.</p>
+      <p>Python is a high-level object-oriented scripting language, primarily
+        used for server-side automation, and Python 3 is the latest major
+        implementation. It has an emphasis on readability and follows explicit
+        rules, particularly with whitespace characters. It was first released
+        in 1990 and is still receiving regular updates.</p>
+      <p>Python follows 19 guiding principles outlined in "The Zen of Python,"
+        a manifesto written by Tim Peters in the public domain. It can even be
+        accessed within the Python interpreter, as shown in the following
+        terminal output:</p>
+      <code>Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 08:06:12) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import this
+The Zen of Python, by Tim Peters
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>></code>
+      <p>This is, admittedly, a lot of information to digest when you're first
+        getting started with learning the language. The biggest thing to take
+        away as a beginner from these principles is the second line:
+        "Readability counts." Python (mostly) forces programmers to write
+        readable code, to the point where <strong>the interpreter does not
+          ignore whitespace characters.</strong> More on this in the section on
+          <a href='#Code_Blocks'>Code Blocks.</a></p>
+    </section>
+
+    <section class='main-section' id='Hello_World_(And_Variables)'>
+      <header><h2>Hello World (And Variables)</h2></header>
+      <p>The best way to understand how Python emphasizes readability is to
+        look at some example programs, and Hello World is a good place to
+        start:</p>
+      <code>print('Hello, World!')</code>
+      <p>That's it. Really! There's no need to import any libraries, no need to
+        declare any functions, and no unintuitively named methods to call. You
+        don't even need to add a semicolon at the end of each line! Above
+        almost everything else, Python prioritizes code being readable.</p>
+      <p>Declaring variables is similarly straightforward. The following program
+        will output the first sentence of Mary Shelly's Frankensein, followed by
+        the number 8:</p>
+  <code>frankenstein = "I am by birth a Genevese, and my family is one of the most distinguished of that republic."
+print(frankenstein)
+myVar1 = 5
+myVar2 = 3
+print(myVar1 + myVar2)</code>
+      <p>An important thing to note about Python is that unlike JavaScript, it
+        does not coerce variables into the same type when presented with two
+        different types of variables. For example, if we were to type
+        <span class='code-snippet'>print(3 + "5")</span> into our Python
+        interpreter, we would get an error.</p>
+    </section>
+
+    <section class='main-section' id='F-Strings'>
+      <header><h2>F-Strings</h2></header>
+      <p>One of the distinguishing features of Python 3 is how it handles
+        formatting variables into strings. Python 3 uses a data type called
+        "f-strings" when inserting variables into strings. F-strings have
+        special syntax compared with normal strings. As an example, the
+        following outputs this page's author's name and age:</p>
+      <code>>>> name = "Diane"
+>>> age = 30
+>>> print(f"{name} is {age} years old and says hello!")
+Diane is 30 years old and says hello!</code>
+      <p>The syntax for f-strings is a lower or uppercase 'f' followed by single
+        or double quotes, with variable names surrounded by {curly brackets}.
+        F-strings can be used anywhere regular strings can be used, and can even
+        be used inside variable declarations.</p>
+      <p>Python 3 still supports the older method of formatting strings by using
+        <span class='code-snippet'>str.format()</span> but this method is much
+        less readable to anyone viewing program code. The following example has
+        the same output as the previous one, but uses the older method of
+        <span class='code-snippet'>str.format()</span>:</p>
+      <code>>>> name = "Diane"
+>>> age = 30
+>>> print("{} is {} years old and says hello!".format(name, age))
+Diane is 30 years old and says hello!</code>
+      <p>Formatting strings by using <span class='code-snippet'>str.format()
+      </span> is less common in Python 3 programs, but it is still important to
+      recognize it, as it often appears in legacy code.</p>
+    </section>
+
+    <section class='main-section' id='Code_Blocks'>
+      <header><h2>Code Blocks</h2></header>
+      <p>One of the unique (and controversial) things about Python is how it
+        handles code blocks and whitespace characters. The syntax for code
+        blocks is influenced by a few of the guiding principles outlined
+        earlier. In particular:</p>
+  <ul>
+    <li>Beautiful is better than ugly.</li>
+    <li>Explicit is better than implict.</li>
+    <li>Sparse is better than dense.</li>
+    <li>Readability counts.</li>
+  </ul>
+      <p>The syntax for code blocks follows three rules:</p>
+      <ol>
+    <li>The line of code that starts a block ends with a colon. (e.g.
+      <span class='code-snippet'>if age == 30:</span>)</li>
+        <li>Each line of code in a block is preceded by <strong>exactly</strong>
+          four (4) whitespace characters.</li>
+    <li>The last line of code with 4 preceding whitespace characters is the last
+      line of the block.</li>
+      </ol>
+      <p>Blocks of code can be nested within each other, but it's considered
+        best practice to avoid this when possible. The following is an example
+        of Python's syntax for code blocks, including a nested block of code.</p>
+  <code>print("Let's see what numbers up to 20 are divisible by 5.")
+i = 0
+
+while i <= 20:
+    if i % 5 == 0:
+        print(f"{i} is divisible by 5.")
+    else:
+        print(f"{i} is not divisible by 5.")
+
+    print("Let's move on to the next number.")
+    i += 1
+
+print("Those are all the positive numbers up to 20 that are divisble by 5.")</code>
+  <p>Although whitespace characters are explicit in Python, extra return
+    carriages are not. Code within a block can have extra return carriages and
+    will still execute properly, as long as the correct number of whitespace
+    characters are used.</p>
+    </section>
+
+    <section class='main-section' id='Functions'>
+      <header><h2>Functions</h2></header>
+      <p>The syntax for declaring and calling functions is straightforward and
+        consistent in Python. A function will always be declared by a
+        <span class='code-snippet'>def</span> statement, followed by the
+        function's name, followed by any arguments it will take (contained
+        within parentheses), and ending with a colon
+        (<span class='code-snippet'>:</span>). Functions do not need to have a
+        <span class='code-snippet'>return</span> statement in order to end and
+        will end whenever their code block does. Functions <strong>must</strong>
+        be declared before they are called. An example program with a function
+        that greets the user follows:
+<code>def sayHello(name):
+    print(f"Hello, {name}.")
+    print("It's a pleasure to meet you!")
+
+print("Please enter your name.")
+sayHello(input("> "))</code>
+      <p>When the author of this page runs the program, her terminal output
+        looks like this:</p>
+      <code>Please enter your name.
+> Diane
+Hello, Diane.
+It's a pleasure to meet you!</code>
+    </section>
+      <p>There is no set upper or lower limit to the number of arguments a
+        function can accept in Python, but for the sake of readability, it's
+        generally considered best practice to limit the maximum number of
+        arguments to three. Functions can be called within other functions as
+        long as they're defined before they're called.</p>
+    <section class='main-section' id='Additional_Resources'>
+      <header><h2>Additional Resources</h2></header>
+      <p>Python is a widely used language, and as such there are a good amount
+        of resources that go into much more detail than this page does. To get
+        started with programming in Python, try any of these resources.
+        <nav class='Resources'><ul>
+          <li><a
+            href="https://www.learnpython.org/">
+            learnpython.org</a></li>
+          <li><a
+            href="https://www.python.org/about/gettingstarted/">
+            Python for Beginners | Python.org</a></li>
+          <li><a
+            href="https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888">
+            Learn Python 3 The Hard Way</a></li>
+          <li><a
+            href="https://automatetheboringstuff.com/">
+            Automate the Boring Stuff with Python</a></li>
+          </ul></nav>
+    </section>
+  <footer>Coded in 2020 by Diane Monaco <a
+    rel="license"
+    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" s
+    rc="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    <br />This work is licensed under a <a rel="license"
+    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+    License</a>.
+      </footer>
+      </article>
+  </main>
+</body>
+</html>
